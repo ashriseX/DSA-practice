@@ -17,10 +17,9 @@ class UsrArray {
                 if (usrArray[i] == value){
                     return i;
                 }
-               
-                return -1;
-                
+    
             }
+            return -1;
         }
 
         //method to add value at the beginning
@@ -112,11 +111,17 @@ class UsrArray {
 
         //method to display the array elements
         void displayArray(){
-            cout << "The elements in the array are : " << endl;
-            for (int i = 0; i < size; i++){
-                cout << usrArray[i] << " " ;
+            if(size == 0){
+                cout << "Array is empty. No elements to display." << endl;
+                return;
             }
-            cout << endl;
+            else{
+                cout << "The elements in the array are : " << endl;
+                for (int i = 0; i < size; i++){
+                    cout << usrArray[i] << " " ;
+                }
+                cout << endl;
+            }
         }
 
         //method to delete a value from the array and end
@@ -166,6 +171,18 @@ class UsrArray {
             size = 0;
             cout << "All elements deleted from the array." << endl;
         }
+
+        //method to perform linear search
+        void linearSearch(int value){
+            int index = search(value);
+            if (index == -1){
+                cout << "Value not found in the data." << endl;
+                return;
+            }
+            else {
+                cout << "Value( " << value << " )found at index " << index << endl;
+            }
+        }
 };
 
 int main(){
@@ -181,14 +198,15 @@ int main(){
         cout << "6. Delete from the beginning" << endl;
         cout << "7. Delete entire array" << endl;
         cout << "8. Display the array elements" << endl;
+        cout << "9. To Linear Search" << endl;
         cout << "0. Exit" << endl;
         cout << "Enter your choice: ";
 
     
         cin >> choice;
         int value;
-        while (choice < 0 || choice > 8){
-            cout << "Invalid choice! Please enter a valid choice between 0 and 8: ";
+        while (choice < 0 || choice > 9){
+            cout << "Invalid choice! Please enter a valid choice between 0 and 9: ";
             cin >> choice;
             }
         switch(choice){
@@ -225,6 +243,11 @@ int main(){
                 break;
             case 8:
                 arr.displayArray();
+                break;
+            case 9:
+                cout << "Enter the value to search: " << endl;
+                cin >> value;
+                arr.linearSearch(value);
                 break;
             default:
                 if(choice != 0){
