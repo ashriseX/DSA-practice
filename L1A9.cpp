@@ -15,6 +15,7 @@ int main(){
     } 
     while (str1 != "goodbye");
     
+    cout << "Goodbye!" << endl;
     return 0;
     
 
