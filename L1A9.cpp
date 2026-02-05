@@ -9,7 +9,7 @@ int main(){
     string str1;
 
     do {
-        cout << "Enter a non-empty string: " << endl;
+        cout << "Enter a non-empty string and goodbye to exit: " << endl;
         getline(cin, str1);
         cout << "you entered: " << str1 << endl;
     } 

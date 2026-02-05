@@ -8,8 +8,9 @@ int n, result = 0;
 
 
 int main(){
-
+cout << "The elements of the array are: ";
     for(n = 0; n < 5; n++){
+        cout << foo[n] << " ";
         result += foo[n];
     }
     cout << "The sum of the array elements is: " << result << endl;
