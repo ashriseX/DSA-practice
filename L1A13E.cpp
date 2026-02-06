@@ -11,11 +11,13 @@ int main(){
 
 
     
-    cout << numPtr << " is the memory address of the " << num1 << " variable";
+    cout << numPtr << " is the memory address of the " << num1 << " variable" << endl;
 
     int num2 = 2237;
     int *num2Ptr;
 
-    cout << num2Ptr << " is the pointer of the variable num2" << num2;
-    
+    cout << num2Ptr << " is the pointer of the variable num2" << num2 << endl;
+    num2Ptr++;
+    cout << num2Ptr << " and " << *num2Ptr << endl;
+
 }
