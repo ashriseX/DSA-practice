@@ -7,16 +7,17 @@ int main(){
     int num1;
     cin >> num1;
 
-    int *numPtr;
+    int *numPtr = &num1;
 
 
     
-    cout << numPtr << " is the memory address of the " << num1 << " variable" << endl;
+    cout << numPtr << " is the memory address of the " << num1 << " variable  " << *numPtr ;
 
     int num2 = 2237;
-    int *num2Ptr;
+    int *num2Ptr = &num2;
 
     cout << num2Ptr << " is the pointer of the variable num2" << num2 << endl;
+    num2Ptr++;
     num2Ptr++;
     cout << num2Ptr << " and " << *num2Ptr << endl;
 
