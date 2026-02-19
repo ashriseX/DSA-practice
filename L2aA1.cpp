@@ -217,11 +217,6 @@ class List{
             return -1; // Return -1 if nodeNum is out of bounds
         }
 
-            
-
-        
-
-        
     };
 
 
@@ -231,6 +226,9 @@ class List{
 
 
     List myList;
+
+    cout << "Creating a linked list and performing various operations...\n";
+    cout << "Inserting values into the list...\n";
 
     // inserting values
     myList.insertAtEnd(10);
@@ -242,12 +240,14 @@ class List{
     myList.insertAfterData(20, 25);
 
 
+    
 
     cout << "After Insertions:\n";
     myList.displayList();
 
     //display in reverse test
 
+    cout << "\nDisplaying the list in reverse...\n";
     cout << "in reverse" << endl;
     myList.displayInReverse();
 
@@ -255,6 +255,7 @@ class List{
     myList.printRecursion(myList.head);
 
 
+    cout << "\nCounting nodes...(fetching data from the user spesified node by counting the nodes\n";
     //count functiontest
     int nodeData = myList.countNode(3);
     if(nodeData != -1){
@@ -270,6 +271,7 @@ class List{
 
     //deletion test
 
+    cout << "\nDeleting nodes...\n";
     myList.deleteAtStart();
 
     cout << "\nAfter Deleting at Start:\n";
@@ -289,6 +291,8 @@ class List{
 
     // SEARCH TEST
 
+    cout << "\nSearching for 25 in the list...\n";
+
     Node* found = myList.search(25);
 
     if(found != NULL && found->data == 25){
@@ -304,6 +308,8 @@ class List{
     myList.deleteList();
 
     cout << endl;
+
+
 
     
 
