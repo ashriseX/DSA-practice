@@ -190,22 +190,36 @@ class List{
 
         //display in reverse by recursive method
 
-       /* void displayInReverseR(){
-            cout << "display in reverse through loop method" << endl;
-            Node *temp = head->next;
-            Node *beforeTemp = head;
+      
+        void printRecursion(Node* temp){
 
-            while(temp->next != NULL){
-                temp = temp->next;
-            }
+                    if(temp->next != NULL){
+                        printRecursion(temp->next);
+                        }
+                    cout << temp->data << " " ;
 
-            displayInReverseR()
-            
-            cout <<temp->data << endl;
-
-            return;
+                return;
         }
-            */
+
+        //function to count the node in the list and return the user specified node data if found
+        int countNode(int nodeNum){
+            int count =1;
+            Node* temp = head;
+            while(temp->next != NULL){
+                if(count == nodeNum){
+                    return temp->data;
+                }
+                else{
+                    count++;
+                    temp = temp->next;
+                }
+            }
+            return -1; // Return -1 if nodeNum is out of bounds
+        }
+
+            
+
+        
 
         
     };
@@ -232,12 +246,29 @@ class List{
     cout << "After Insertions:\n";
     myList.displayList();
 
+    //display in reverse test
+
     cout << "in reverse" << endl;
     myList.displayInReverse();
+
+    cout << "in reverse through recursion" << endl;
+    myList.printRecursion(myList.head);
+
+
+    //count functiontest
+    int nodeData = myList.countNode(3);
+    if(nodeData != -1){
+        cout << "\nData at node 3: " << nodeData << endl;
+    }
+    else{
+        cout << "\nNode number out of bounds.\n";
+    }
 
     
 
 
+
+    //deletion test
 
     myList.deleteAtStart();
 
