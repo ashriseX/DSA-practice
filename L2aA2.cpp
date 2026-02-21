@@ -69,3 +69,34 @@ class List{
              return;
         }
 };
+
+//main test class
+int main(){
+
+    List list1;
+    List list2;
+
+    //inserting data into the first list
+    list1.insertAtEnd(10);
+    list1.insertAtEnd(20);
+    list1.insertAtEnd(30);
+
+    cout << "List 1:\n";
+    list1.displayList();
+
+    //inserting data into the second list
+    list2.insertAtEnd(40);
+    list2.insertAtEnd(50);
+    list2.insertAtEnd(60);
+
+    cout << "\nList 2:\n";
+    list2.displayList();
+
+    //merging the two lists
+    list1.mergeList(list2.head);
+
+    cout << "\nMerged List:\n";
+    list1.displayList();
+
+     return 0;
+}
