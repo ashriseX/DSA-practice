@@ -68,6 +68,36 @@ class List{
 
              return;
         }
+
+        //checking multiple occurences of data in the the list
+        void multipleOcuurrences(){
+            Node* stale = head;
+            Node* checker;
+            int index = 1;
+
+            while(stale->next != NULL){
+                checker = stale->next;
+                bool match = false;
+                int node = 1;
+                while(checker->next != NULL){
+                    checker = checker->next;
+                    if(checker->data == stale->data){
+                        match = true;
+                        cout << node << " " ;
+                    }
+                    node++;
+                }
+                if(match==true){
+                    cout <<endl << index << "th index value" << stale->data << " has been repeated at above indexes" << endl;
+
+                }
+                
+                stale = stale->next;
+                index++;
+                
+            }
+
+        }
 };
 
 //main test class
@@ -80,6 +110,9 @@ int main(){
     list1.insertAtEnd(10);
     list1.insertAtEnd(20);
     list1.insertAtEnd(30);
+    list1.insertAtEnd(90);
+    list1.insertAtEnd(80);
+    list1.insertAtEnd(40);
 
     cout << "List 1:\n";
     list1.displayList();
@@ -97,6 +130,10 @@ int main(){
 
     cout << "\nMerged List:\n";
     list1.displayList();
+
+    cout << "multiple occurences of the data" << endl;
+    list1.multipleOcuurrences();
+
 
      return 0;
 }
