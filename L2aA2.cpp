@@ -69,6 +69,41 @@ class List{
              return;
         }
 
+        //reverse a linked list
+        void reverseList(){
+            Node* prev = NULL;
+            Node* curr = head;
+            Node* next = NULL;
+
+            while(curr != NULL){
+                next = curr->next;
+                curr->next = prev;
+                prev = curr;
+                curr = next;
+            }
+
+            head = prev;
+
+            return;
+        }
+
+        //middle of a linked list
+        Node* middleOfList(){
+            Node* slow = head;
+            Node* fast = head;
+
+            while(fast != NULL && fast->next != NULL){
+                slow = slow->next;
+                fast = fast->next->next;
+            }
+
+            cout << slow << " is the address of the miidle node and it contains the data: " << slow->data << endl;
+            return slow;
+        }
+
+        //checking the loop  in a linked list
+        
+
         //checking multiple occurences of data in the the list
         void multipleOcuurrences(){
             Node* stale = head;
